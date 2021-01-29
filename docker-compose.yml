@@ -1,0 +1,26 @@
+version: '2.0'
+
+services:
+  api:
+    container_name: nest_api
+    build: .
+    ports:
+      - ${API_PORT}:${API_PORT}
+    volumes:
+      - .:/home/api # mesmo endereço do workdir no Dockerfile
+      - /home/api/node_modules # comando opsto ao de cima, esse copia do container para a makina local
+
+    environment:
+      DB_HOST: database
+      DB_PORT: 5432
+  # o noma database é o mesmo usado na ormconfig.json na tag host
+  database:
+    image: postgres
+    container_name: nest_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:5432
