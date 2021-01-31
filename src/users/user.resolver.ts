@@ -10,7 +10,7 @@ export class UserResolver {
 
   @Query(() => [User])
   async users(): Promise<User[]> {
-    const users = await this.userService.findAll();
+    const users = await this.userService.findAllUsers();
     return users;
   }
 
