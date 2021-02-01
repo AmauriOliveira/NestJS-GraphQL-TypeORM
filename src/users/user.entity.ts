@@ -1,5 +1,7 @@
-import { Field, ObjectType, ID } from '@nestjs/graphql';
+import { Field, ObjectType, ID, HideField } from '@nestjs/graphql';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
+import { hashPasswordTransform } from '../shared/helpers/crypto';
 
 @ObjectType()
 @Entity()
@@ -13,4 +15,10 @@ export class User {
 
   @Column()
   email: string;
+
+  @Column({
+    transformer: hashPasswordTransform,
+  })
+  @HideField()
+  password: string;
 }

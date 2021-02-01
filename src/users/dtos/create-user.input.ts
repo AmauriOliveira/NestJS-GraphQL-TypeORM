@@ -4,10 +4,14 @@ import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 @InputType()
 export class CreateUserInput {
   @IsString()
-  @IsNotEmpty({ message: 'Este campo não pode estar vazio.' })
+  @IsNotEmpty({ message: 'Invalid Name.' })
   name: string;
 
   @IsEmail()
-  @IsNotEmpty({ message: 'Este campo não pode estar vazio.' })
+  @IsNotEmpty({ message: 'Invalid Email.' })
   email: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Invalid Password.' })
+  password: string;
 }
