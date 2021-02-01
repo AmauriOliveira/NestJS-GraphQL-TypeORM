@@ -14,8 +14,8 @@
 
 ## :telescope: Visão geral
 
-[🏠 Homepage](https://github.com/AmauriOliveira/NestJS-GraphQL-TypeORM)
-bla bla bla lonmg
+[🏠 Homepage](https://github.com/AmauriOliveira)
+Veja oustro projetos
 
 ## :computer: Tecnologias
 
