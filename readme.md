@@ -15,7 +15,7 @@
 ## :telescope: Visão geral
 
 [🏠 Homepage](https://github.com/AmauriOliveira)
-Veja oustro projetos
+Veja outros projetos
 
 ## :computer: Tecnologias
 
@@ -70,9 +70,14 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+
+# test verbose
+$ npm run test:verb
 ```
 
 ## GraphQl
+
+> Exemplo de como montar as query
 
 ### Query
 
